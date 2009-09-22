@@ -7,6 +7,8 @@ alias osx2unix='perl -pi~ -e "s/\r/\n/g"'
 alias unix2dos='perl -pi~ -e "s/\n/\r\n/g"'
 alias cpan='perl -MCPAN -e shell'
 alias grep='egrep --color=always'
+alias musb='mount /mnt/usbstick'
+alias uusb='umount /mnt/usbstick'
  
 BWHITE='\[\033[1;39m\]'
 WHITE='\[\033[0;39m\]'
