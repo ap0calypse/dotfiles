@@ -59,7 +59,7 @@ $nodename - $sysname $kernel on $machine
 $hr
 ${color ffbb00}Temperature:$color $acpitemp ° C
 ${color ffbb00}Battery:$color $battery
-${battery_bar 3}
+${battery_bar 3 BAT0}
 $hr
 ${color ffbb00}Uptime:$color $uptime
 ${color ffbb00}Frequency:$color $freq MHz
