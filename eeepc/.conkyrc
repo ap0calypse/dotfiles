@@ -63,25 +63,21 @@ ${battery_bar 3 BAT0}
 $hr
 ${color ffbb00}Uptime:$color $uptime
 ${color ffbb00}Frequency:$color $freq MHz
-${color ffbb00}RAM Usage:$color $mem / $memmax $memperc% 
-${membar 3}
-${color ffbb00}CPU Usage:$color $cpu % 
-${cpubar 3}
-${cpugraph}
+
+Usage CPU:        Usage Memory:
+${cpubar 10,120}   ${membar 10,120}
+
 ${color ffbb00}Processes:$color $processes  ${color ffbb00}Running:$color $running_processes
 $hr
-${color ffbb00}File systems:
- /     $color${fs_free /} / ${fs_size /} 
-${fs_bar 3 /}${color ffbb00}
- /usr  $color${fs_free /usr} / ${fs_size /usr} 
-${fs_bar 3 /usr}${color ffbb00}
- /home $color${fs_free /home} / ${fs_size /home} 
-${fs_bar 3 /home}
+${color ffbb00}File systems:${color}
+/            /usr          /home
+${fs_bar 10,80 /}   ${fs_bar 10,80 /usr}    ${fs_bar 10,80 /home}
+${fs_used_perc /} %         ${fs_used_perc /usr} %          ${fs_used_perc /home} %
 $hr
 ${color ffbb00}Networking:$color
-ppp0    wlan0   eth0    ra0
-dn up   dn up   dn up   dn up
-${downspeedgraph ppp0 15,20 ff0000 ff0000}${upspeedgraph ppp0 15,20 00ff00 00ff00}   ${downspeedgraph wlan0 15,20 ff0000 ff0000}${upspeedgraph wlan0 15,20 00ff00 00ff00}   ${downspeedgraph eth0 15,20 ff0000 ff0000}${upspeedgraph eth0 15,20 00ff00 00ff00}   ${downspeedgraph ra0 15,20 ff0000 ff0000}${upspeedgraph ra0 15,20 00ff00 00ff00}
+ppp0      wlan0     eth0      ra0
+dn up     dn up     dn up     dn up
+${downspeedgraph ppp0 15,20 ff0000 ff0000}${upspeedgraph ppp0 15,20 00ff00 00ff00}     ${downspeedgraph wlan0 15,20 ff0000 ff0000}${upspeedgraph wlan0 15,20 00ff00 00ff00}     ${downspeedgraph eth0 15,20 ff0000 ff0000}${upspeedgraph eth0 15,20 00ff00 00ff00}     ${downspeedgraph ra0 15,20 ff0000 ff0000}${upspeedgraph ra0 15,20 00ff00 00ff00}
 $hr
 ${color darkgrey}Name                 PID   CPU%   MEM%
 ${color lightgrey}${top name 1}    ${top pid 1} ${top cpu 1} ${top mem 1}
