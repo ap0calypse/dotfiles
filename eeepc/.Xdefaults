@@ -16,7 +16,7 @@
 *color15:               #dedede
 
 
-urxvt*transparent:      false
+urxvt*transparent:      true
 urxvt*geometry:         85x12
 urxvt*termName:         xterm
 urxvt*loginShell:       true
@@ -24,7 +24,8 @@ urxvt*font:             xft:Consolas:size=10
 urxvt*foreground:       #dcdcdc
 urxvt*background:       #000000
 urxvt*scrollBar:        false
-urxvt*saveLnes:         2000
+urxvt*saveLines:        2000
+urxvt*shading:          40
 
 Xft.dpi:                96
 Xft.antialias:          true
