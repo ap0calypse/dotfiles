@@ -37,7 +37,7 @@ draw_graph_borders yes
 draw_outline no
 draw_shades no
 use_xft no
-xftfont terminus:size=10
+#xftfont liberation mono:size=9
 font -*-terminus-medium-*-*-*-14-*-*-*-*-*-iso8859-15
 gap_x 10
 gap_y 30
@@ -59,7 +59,7 @@ $nodename - $sysname $kernel on $machine
 $hr
 ${color ffbb00}Temperature:$color $acpitemp ° C
 ${color ffbb00}Battery:$color $battery
-${battery_bar 3}
+${battery_bar 3 BAT0}
 $hr
 ${color ffbb00}Uptime:$color $uptime
 ${color ffbb00}Frequency:$color $freq MHz
@@ -77,11 +77,11 @@ ${fs_bar 3 /}${color ffbb00}
 ${fs_bar 3 /usr}${color ffbb00}
  /home $color${fs_free /home} / ${fs_size /home} 
 ${fs_bar 3 /home}
+$hr
 ${color ffbb00}Networking:$color
-eth0  Up:$color ${upspeed eth0} k/s${color ffbb00} - Down:$color ${downspeed eth0} k/s
-wlan0 Up:$color ${upspeed wlan0} k/s${color ffbb00} - Down:$color ${downspeed wlan0} k/s
-ra0   Up:$color ${upspeed ra0} k/s${color ffbb00} - Down:$color ${downspeed ra0} k/s
-ppp0  Up:$color ${upspeed ppp0} k/s${color ffbb00} - Down:$color ${downspeed ppp0} k/s
+ppp0    wlan0   eth0    ra0
+dn up   dn up   dn up   dn up
+${downspeedgraph ppp0 15,20 ff0000 ff0000}${upspeedgraph ppp0 15,20 00ff00 00ff00}   ${downspeedgraph wlan0 15,20 ff0000 ff0000}${upspeedgraph wlan0 15,20 00ff00 00ff00}   ${downspeedgraph eth0 15,20 ff0000 ff0000}${upspeedgraph eth0 15,20 00ff00 00ff00}   ${downspeedgraph ra0 15,20 ff0000 ff0000}${upspeedgraph ra0 15,20 00ff00 00ff00}
 $hr
 ${color darkgrey}Name                 PID   CPU%   MEM%
 ${color lightgrey}${top name 1}    ${top pid 1} ${top cpu 1} ${top mem 1}
