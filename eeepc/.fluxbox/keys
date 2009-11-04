@@ -57,6 +57,10 @@ Mod1 F2 :Exec fbrun
 122 :Exec amixer sset Speaker,0 1-
 121 :Exec amixer sset Speaker,0 toggle
 
+157 :Exec sudo cpufreq-set -g powersave
+210 :Exec sudo cpufreq-set -g performance
+160 :Exec xlock -mode molecule
+
 # current window commands
 Mod1 F4 :Close
 Mod1 F9 :Minimize
