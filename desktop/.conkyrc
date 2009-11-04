@@ -40,7 +40,7 @@ use_xft no
 #xftfont liberation mono:size=9
 font -*-terminus-medium-*-*-*-14-*-*-*-*-*-iso8859-15
 gap_x 10
-gap_y 30
+gap_y 10
 minimum_size 5 5
 net_avg_samples 2
 no_buffers yes
@@ -56,13 +56,12 @@ use_spacer none
 
 TEXT
 $nodename - $sysname $kernel on $machine
-$hr
+
 ${color ffbb00}Temperature:$color $acpitemp ° C
-${color ffbb00}Battery:$color $battery
-${battery_bar 3 BAT0}
+${color ffbb00}Uptime:$color      $uptime
+${color ffbb00}Frequency:$color   $freq MHz
+
 $hr
-${color ffbb00}Uptime:$color $uptime
-${color ffbb00}Frequency:$color $freq MHz
 
 Usage CPU:        Usage Memory:
 ${cpubar 10,120}   ${membar 10,120}
@@ -70,14 +69,14 @@ ${cpubar 10,120}   ${membar 10,120}
 ${color ffbb00}Processes:$color $processes  ${color ffbb00}Running:$color $running_processes
 $hr
 ${color ffbb00}File systems:${color}
-/            /home
-${fs_bar 10,80 /}   ${fs_bar 10,80 /home}
-${fs_used_perc /} %         ${fs_used_perc /home} %
+/            /share        /home
+${fs_bar 10,80 /}   ${fs_bar 10,80 /share}    ${fs_bar 10,80 /home}
+${fs_used_perc /} %         ${fs_used_perc /share} %          ${fs_used_perc /home} %
 $hr
 ${color ffbb00}Networking:$color
-ppp0      wlan0     eth0
-dn up     dn up     dn up
-${downspeedgraph ppp0 15,20 ff0000 ff0000}${upspeedgraph ppp0 15,20 00ff00 00ff00}     ${downspeedgraph wlan0 15,20 ff0000 ff0000}${upspeedgraph wlan0 15,20 00ff00 00ff00}     ${downspeedgraph eth0 15,20 ff0000 ff0000}${upspeedgraph eth0 15,20 00ff00 00ff00}
+wlan0             eth0
+dn   up           dn   up
+${downspeedgraph wlan0 15,40 ff0000 ff0000}${upspeedgraph wlan0 15,40 00ff00 00ff00}        ${downspeedgraph eth0 15,40 ff0000 ff0000}${upspeedgraph eth0 15,40 00ff00 00ff00}
 $hr
 ${color darkgrey}Name                 PID   CPU%   MEM%
 ${color lightgrey}${top name 1}    ${top pid 1} ${top cpu 1} ${top mem 1}
